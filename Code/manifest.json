@@ -1,0 +1,50 @@
+{
+  "name": "Youtuber++",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Yazılım ve Girişim Youtube Kanalı İçin Özel Özellikleri Aktif Eder",
+  "homepage_url": "https://hayatikodla.net",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": true
+  },
+  "chrome_url_overrides": {
+    "newtab": "src/override/override.html"
+  },
+  "permissions": [
+    "chrome://favicon/",
+    "contentSettings",
+    "contextMenus",
+    "fileBrowserHandler",
+    "notifications",
+    "tabs",
+    "https://*.youtube.com/watch?v=*",
+    "https://youtube.com/watch?v=*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.youtube.com/watch?v=*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://*.youtube.com/watch?v=*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
