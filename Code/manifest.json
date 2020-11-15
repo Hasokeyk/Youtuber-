@@ -1,50 +1,44 @@
 {
-  "name": "Youtuber++",
-  "version": "0.0.1",
-  "manifest_version": 2,
-  "description": "Yazılım ve Girişim Youtube Kanalı İçin Özel Özellikleri Aktif Eder",
-  "homepage_url": "https://hayatikodla.net",
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
-  "default_locale": "en",
-  "background": {
-    "scripts": [
-      "src/bg/background.js"
-    ],
-    "persistent": true
-  },
-  "chrome_url_overrides": {
-    "newtab": "src/override/override.html"
-  },
-  "permissions": [
-    "chrome://favicon/",
-    "contentSettings",
-    "contextMenus",
-    "fileBrowserHandler",
-    "notifications",
-    "tabs",
-    "https://*.youtube.com/watch?v=*",
-    "https://youtube.com/watch?v=*"
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://*.youtube.com/watch?v=*"
-      ],
-      "css": [
-        "src/inject/inject.css"
-      ]
+    "name":"Youtuber++",
+    "version":"0.0.1",
+    "manifest_version":2,
+    "description":"Yazılım ve Girişim Youtube Kanalı İçin Özel Özellikleri Aktif Eden Chrome Eklentisi",
+    "homepage_url":"https://hayatikodla.net",
+    "icons":{
+        "16":"icons/favicon-16x16.png",
+        "48":"icons/android-icon-48x48.png",
+        "144":"icons/android-icon-144x144.png"
     },
-    {
-      "matches": [
-        "https://*.youtube.com/watch?v=*"
-      ],
-      "js": [
-        "src/inject/inject.js"
-      ]
-    }
-  ]
+    "default_locale":"en",
+    "background":{
+        "scripts":[
+            "js/background.js"
+        ],
+        "persistent":true
+    },
+    "permissions":[
+        "chrome://favicon/",
+        "contentSettings",
+        "contextMenus",
+        "notifications",
+        "https://*.youtube.com/watch?v=*",
+        "https://youtube.com/watch?v=*"
+    ],
+    "web_accessible_resources": [
+        "css/youtuber++.css"
+    ],
+    "content_scripts":[
+        {
+            "matches":[
+                "https://*.youtube.com/*"
+            ],
+            "css":[
+                "css/youtuber++.css"
+            ],
+            "js":[
+                "js/jquery/jquery.js",
+                "js/youtuber++.js"
+            ]
+        }
+    ]
 }
