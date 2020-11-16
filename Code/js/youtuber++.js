@@ -1,6 +1,8 @@
 var youtuber_class = new youtuber;
 
-//console.clear()
+var div = document.createElement('div');
+div.classList.add('youtuber');
+document.body.appendChild(div);
 
 window.addEventListener('load', function(){
     
@@ -26,9 +28,25 @@ window.addEventListener('load', function(){
     })
     */
     
-    /*
+    
     window.addEventListener('video_current_time', res => {
-        console.log('video_current_time',res.detail.current_time)
+        var t = youtuber_class.time_format(res.detail.current_time);
+        $('.youtuber').text(t)
     })
-    */
+    
+    var json = [
+        {
+            "00:01:00:00": {
+                "event" : "seek",
+                "time" : 140
+            },
+            "00:01:30:00": {
+            
+            },
+            "00:01:30:00-00:02:00:00": {
+            
+            }
+        }
+    ]
+    
 });

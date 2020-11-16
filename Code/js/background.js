@@ -7,7 +7,9 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
         });
     
         chrome.notifications.onClicked.addListener(function(response){
-            chrome.tabs.create({url: message.link});
+            if(message.link != null){
+                chrome.tabs.create({url: message.link});
+            }
         });
         
     }
