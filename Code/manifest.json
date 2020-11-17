@@ -21,9 +21,7 @@
         "tabs",
         "contentSettings",
         "contextMenus",
-        "notifications",
-        "https://*.youtube.com/watch?v=*",
-        "https://youtube.com/watch?v=*"
+        "notifications"
     ],
     "web_accessible_resources":[
         "css/youtuber++.css"
