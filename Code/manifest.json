@@ -38,6 +38,7 @@
             "js":[
                 "js/jquery/jquery.js",
                 "js/functions.js",
+                "js/favitab.js",
                 "js/youtuber++.js"
             ]
         }
